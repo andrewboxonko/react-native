@@ -5,7 +5,7 @@ import { Navigation } from '../../components/Navigation/index'
 import styles from "./Forecast.style";
 
 
-const Forecast = () => {
+const Forecast = ({navigation}: {navigation: any}) => {
     return <View style={styles.wrapper}>
         <ForecastItem  forecastInfo={{
             day: 'Today',
@@ -49,7 +49,7 @@ const Forecast = () => {
             high: 9,
             weather: 'rainy'
         }}/>
-        <Navigation active={'forecast'} />
+        <Navigation active={'forecast'} navigation={navigation}/>
     </View>
 }
 

@@ -22,9 +22,21 @@ const ForecastItem = (props: {
             </Text>
            <IconTag width={60} height={50} fill={"#8B8EA5"} />
             <View style={styles.range}>
-                <Degree temperature={props.forecastInfo.low} fontSizeDegree={26} fontSizeSup={18} />
+                <Degree temperature={props.forecastInfo.low} styles={{
+                    fontSizeDegree: 26,
+                    fontSizeSup: 18,
+                    direction: 'row',
+                    bold: false,
+                    color: 'white'
+                }}/>
                 <View style={styles.scale} />
-                <Degree temperature={props.forecastInfo.high} fontSizeDegree={26} fontSizeSup={18} />
+                <Degree temperature={props.forecastInfo.high} styles={{
+                    fontSizeDegree: 26,
+                    fontSizeSup: 18,
+                    direction: 'row',
+                    bold: false,
+                    color: 'white'
+                }}/>
             </View>
         </View>
     )

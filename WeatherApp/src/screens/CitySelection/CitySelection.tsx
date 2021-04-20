@@ -1,15 +1,20 @@
 import React from 'react';
-import {View, Text} from "react-native";
+import {View} from "react-native";
 import { City } from '../../components/City/index'
 import { Search } from "../../components/Search/index";
 import styles from './CitySelection.style'
 import BackArrow from '../../assets/icons/arrow_back_ios_black_24dp.svg'
 
 
-const CitySelection = () => {
+const CitySelection = ({navigation}: {navigation: any}) => {
     return (
         <View style={styles.wrapper}>
-            <BackArrow width={35} height={35} fill={"#8B8EA5"} style={styles.backArrow}/>
+            <BackArrow width={35}
+                       height={35}
+                       fill={"#8B8EA5"}
+                       style={styles.backArrow}
+                       onPress={() => navigation.navigate('Weather')}
+            />
             <Search/>
             <City cityInfo={{
                 city: 'Dnipro',

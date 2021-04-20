@@ -1,18 +1,27 @@
-import {Text, View} from "react-native";
 import React from "react";
+import {Text, View} from "react-native";
 import styles from "./Text.style";
 
+
 const Degree = (props: {
-    temperature: number,
-    fontSizeDegree: number,
-    fontSizeSup: number,
+    temperature: number | string,
+    styles: {
+        fontSizeDegree: number,
+        fontSizeSup: number,
+        direction: 'row' | 'row-reverse',
+        bold: boolean,
+        color: string
+    }
+
 }) => {
+    const fontFamily = props.styles.bold ? {fontFamily: 'WorkSans-SemiBold'} : {fontFamily: 'WorkSans-Regular'}
+
     return (
-        <View style={styles.temperature}>
-            <Text style={ [styles.degree, {fontSize: props.fontSizeDegree}] }>
+        <View style={[styles.temperature, {flexDirection: props.styles.direction}]}>
+            <Text style={ [{fontSize: props.styles.fontSizeDegree, color: props.styles.color}, fontFamily] }>
                 {props.temperature}
             </Text>
-            <Text style={ [styles.sup, {fontSize: props.fontSizeSup}]}>
+            <Text style={ [{fontSize: props.styles.fontSizeSup,  color: props.styles.color}, fontFamily]}>
                 o
             </Text>
         </View>
