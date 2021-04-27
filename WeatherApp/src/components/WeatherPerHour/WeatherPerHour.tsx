@@ -19,7 +19,13 @@ const WeatherPerHour = (props: {
                 {props.perHour.time}
             </Text>
             <IconTag width={35} height={40} fill={"white"}/>
-            <Degree temperature={props.perHour.temperature} fontSizeDegree={22} fontSizeSup={15}/>
+            <Degree temperature={props.perHour.temperature} styles={{
+                fontSizeDegree: 22,
+                fontSizeSup: 15,
+                direction: 'row',
+                bold: false,
+                color: 'white'
+            }}/>
         </View>
     )
 }

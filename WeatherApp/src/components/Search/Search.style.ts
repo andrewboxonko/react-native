@@ -18,6 +18,5 @@ export default StyleSheet.create({
         alignItems: 'center',
         borderBottomWidth: 2,
         borderColor: '#FFFFFF',
-
     }
 })

@@ -17,7 +17,13 @@ const City = (props: {
     return (
         <View style={styles.row}>
             <View style={styles.weatherInfo}>
-                <Degree temperature={props.cityInfo.temperature} fontSizeDegree={37} fontSizeSup={21}/>
+                <Degree temperature={props.cityInfo.temperature} styles={{
+                    fontSizeDegree: 37,
+                    fontSizeSup: 21,
+                    direction: 'row',
+                    bold: false,
+                    color: 'white'
+                }}/>
                 <IconTag width={120} height={45} fill={"#8B8EA5"}/>
             </View>
             <View style={styles.cityDesc}>
